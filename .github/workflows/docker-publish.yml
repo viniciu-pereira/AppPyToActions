@@ -24,12 +24,12 @@ jobs:
     # 3. Construir a imagem Docker
     - name: Build Docker image
       run: |
-        docker build -t legitimo/app_py_to_actions:latest .
+        docker build -t viniciusfelipi/app_py_to_actions:latest .
 
     # 4. Enviar a imagem para o DockerHub
     - name: Push Docker image
       run: |
-        docker push legitimo/app_py_to_actions:latest
+        docker push viniciusfelipi/app_py_to_actions:latest
 
     # 5. Deploy no servidor remoto
     - name: Deploy to remote server
@@ -41,9 +41,9 @@ jobs:
         port: 22                               # Porta SSH
         script: |
           # Atualizar a imagem no servidor
-          docker pull legitimo/app_py_to_actions:latest
+          docker pull viniciusfelipi/app_py_to_actions:latest
           # Parar e remover o container existente
           docker stop app_py_to_actions || true
           docker rm app_py_to_actions || true
           # Subir o novo container com a imagem mais recente
-          docker run -d --name app_py_to_actions -p 8106:8106 legitimo/app_py_to_actions:latest
+          docker run -d --name app_py_to_actions -p 8106:8106 viniciusfelipi/app_py_to_actions:latest
