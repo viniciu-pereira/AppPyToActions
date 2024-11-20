@@ -27,7 +27,7 @@ jobs:
     # 4. Conectar ao servidor e realizar o deploy
     - name: Deploy to Server
       run: |
-        ssh seu-usuario@201.23.3.86 << 'EOF'
+        ssh aluno@201.23.3.86 << 'EOF'
         cd /caminho/do/projeto            # Caminho do código no servidor
         git pull origin main              # Atualizar o código
         docker build -t app_py_to_actions .  # Construir a imagem Docker
