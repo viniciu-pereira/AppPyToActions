@@ -46,4 +46,4 @@ jobs:
           docker stop app_py_to_actions || true
           docker rm app_py_to_actions || true
           # Subir o novo container com a imagem mais recente
-          docker run -d --name app_py_to_actions -p 8106:8106 viniciusfelipi/app_py_to_actions:latest
+          docker run -d --name app_py_to_actions -p 8106:8106 --restart unless-stopped viniciusfelipi/app_py_to_actions:latest
