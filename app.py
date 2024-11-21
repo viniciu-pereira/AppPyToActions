@@ -55,7 +55,7 @@ HTML_TEMPLATE = """
 </head>
 <body>
     <div class="container">
-        <h1>Aplicação flask para deploy</h1>
+        <h1></h1>
         <p>Vinicius Felipi Pereira - Teste de GitHub actions</p>
         <a class="btn" href="#">Style</a>
     </div>
